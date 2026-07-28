@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Interactive weather dashboard built with semantic HTML, CSS, and vanilla JavaScript." />
+    <title>Weather Dashboard</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+
+    <div class="page-shell">
+      <header class="hero" role="banner">
+        <div class="hero__copy">
+          <p class="eyebrow">Live Weather Insight</p>
+          <h1>Weather Dashboard</h1>
+          <p class="hero__text">Search any city and get an instant, polished forecast overview.</p>
+        </div>
+        <button class="theme-toggle" type="button" id="theme-toggle" aria-label="Toggle color theme">
+          <span aria-hidden="true">🌙</span>
+        </button>
+      </header>
+
+      <main id="main-content" class="dashboard" role="main">
+        <section class="panel panel--search" aria-labelledby="search-title">
+          <div class="panel__header">
+            <h2 id="search-title">Find Weather</h2>
+            <p>Enter a city name to load current conditions.</p>
+          </div>
+
+          <form id="search-form" class="search-form" novalidate>
+            <label class="sr-only" for="city-input">City name</label>
+            <input id="city-input" name="city" type="text" placeholder="Search for a city" autocomplete="off" required />
+            <button class="button button--primary" type="submit">Search</button>
+          </form>
+
+          <p id="error-message" class="message message--error" role="alert" aria-live="assertive"></p>
+          <p id="loading-message" class="message message--loading" role="status" aria-live="polite"></p>
+        </section>
+
+        <section class="panel panel--weather" aria-labelledby="weather-title">
+          <div class="panel__header">
+            <h2 id="weather-title">Current Weather</h2>
+            <p>Modern glassmorphism experience with key metrics at a glance.</p>
+          </div>
+
+          <div id="weather-panel" class="weather-panel" aria-live="polite">
+            <div class="weather-placeholder">
+              <p>Search for a city to see live weather details.</p>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
