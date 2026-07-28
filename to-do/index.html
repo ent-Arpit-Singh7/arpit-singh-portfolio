@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="A modern to-do list app built with semantic HTML, CSS, and vanilla JavaScript." />
+    <meta name="theme-color" content="#2563eb" />
+    <title>To-Do List</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="app-header">
+        <div class="header-content">
+          <div>
+            <p class="eyebrow">Productivity Dashboard</p>
+            <h1>To-Do List</h1>
+            <p class="header-copy">Keep your day organized with a calm, focused workspace.</p>
+          </div>
+          <button class="theme-toggle" type="button" data-theme-toggle aria-label="Toggle color theme">
+            <span class="theme-icon" aria-hidden="true">🌙</span>
+            <span class="sr-only">Toggle theme</span>
+          </button>
+        </div>
+      </header>
+
+      <main class="app-main">
+        <section class="panel composer-panel" aria-labelledby="task-form-title">
+          <div class="panel-heading">
+            <h2 id="task-form-title">Add a Task</h2>
+            <p>Capture your next step in seconds.</p>
+          </div>
+          <form id="task-form" class="task-form" novalidate>
+            <label class="sr-only" for="task-input">Task title</label>
+            <input id="task-input" name="task" type="text" placeholder="What needs to be done?" autocomplete="off" required />
+            <button class="button button-primary" type="submit">Add Task</button>
+          </form>
+          <p id="form-message" class="form-message" role="status" aria-live="polite"></p>
+        </section>
+
+        <section class="panel stats-panel" aria-labelledby="stats-title">
+          <div class="panel-heading">
+            <h2 id="stats-title">Overview</h2>
+            <p>Stay on top of progress.</p>
+          </div>
+          <div class="stats-grid">
+            <article class="stat-card">
+              <strong id="task-count">0</strong>
+              <span>Total</span>
+            </article>
+            <article class="stat-card">
+              <strong id="active-count">0</strong>
+              <span>Active</span>
+            </article>
+            <article class="stat-card">
+              <strong id="completed-count">0</strong>
+              <span>Completed</span>
+            </article>
+          </div>
+          <div class="filter-group" id="filter-group" role="group" aria-label="Filter tasks">
+            <button class="filter-button is-active" type="button" data-filter="all">All</button>
+            <button class="filter-button" type="button" data-filter="active">Active</button>
+            <button class="filter-button" type="button" data-filter="completed">Completed</button>
+          </div>
+        </section>
+
+        <section class="panel task-panel" aria-labelledby="task-list-title">
+          <div class="panel-heading">
+            <h2 id="task-list-title">Your Tasks</h2>
+            <p>All changes are saved automatically.</p>
+          </div>
+          <div id="task-list" class="task-list" role="list" aria-live="polite"></div>
+        </section>
+      </main>
+
+      <footer class="app-footer">
+        <p>Built with semantic HTML, CSS, and vanilla JavaScript.</p>
+      </footer>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
